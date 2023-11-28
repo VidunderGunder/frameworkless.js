@@ -1,5 +1,5 @@
-const button = document.createElement("template");
-button.innerHTML = /*html*/ `
+const element = document.createElement("template");
+element.innerHTML = /*html*/ `
   <style>
     button {
       background-color: #1f1f29;
@@ -17,11 +17,11 @@ button.innerHTML = /*html*/ `
     <slot></slot>
   </button>
 `;
-class Button extends HTMLElement {
+class Component extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: "open" });
-    shadow.append(button.content.cloneNode(true));
+    shadow.append(element.content.cloneNode(true));
   }
 }
-customElements.define("button-component", Button);
+customElements.define("app-button", Component);

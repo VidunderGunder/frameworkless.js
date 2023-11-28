@@ -1,5 +1,5 @@
-const card = document.createElement("template");
-card.innerHTML = /*html*/ `
+const element = document.createElement("template");
+element.innerHTML = /*html*/ `
   <style>
     .card {
       background-color: #f1f1f1;
@@ -18,11 +18,11 @@ card.innerHTML = /*html*/ `
     <slot></slot>
   </div>
 `;
-class Card extends HTMLElement {
+class Component extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: "open" });
-    shadow.append(card.content.cloneNode(true));
+    shadow.append(element.content.cloneNode(true));
   }
 }
-customElements.define("card-component", Card);
+customElements.define("app-card", Component);
