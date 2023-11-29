@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script defer src="public/index.js"></script>
+    <script defer src="public/components.js"></script>
     <style>
       button {
         background-color: #000;
@@ -27,13 +27,19 @@
         justify-content: center;
         height: 100vh;
         gap: 1rem;
+        font-family: sans-serif;
       }
     </style>
   </head>
   <body>
-    <button>Regular Button</button>
-    <app-button>Button Component</app-button>
-    <app-card>Card Component</app-card>
-    <app-button-card>Button Card Component</app-button-card>
+    <h2>Pages</h2>
+    <a href="/">Home</a>
+    <a href="/404">404</a>
+    <a href="/docs">Docs</a>
+    <a href="/docs/example">Example</a>
+    <h2>Components</h2>
+    <app-button>Button</app-button>
+    <app-card>Card</app-card>
+    <app-nested>Nested</app-nested>
   </body>
 </html>

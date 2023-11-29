@@ -53,7 +53,7 @@ class Card extends HTMLElement {
   }
 }
 
-class CardButton extends HTMLElement {
+class Nested extends HTMLElement {
   constructor() {
     super();
     const element = document.createElement("template");
@@ -71,4 +71,4 @@ class CardButton extends HTMLElement {
 
 customElements.define("app-button", Button);
 customElements.define("app-card", Card);
-customElements.define("app-button-card", CardButton);
+customElements.define("app-nested", Nested);
