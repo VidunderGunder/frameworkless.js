@@ -1,5 +1,5 @@
 import { file } from "bun";
-import { readdir, stat } from "node:fs/promises";
+import { readdir } from "node:fs/promises";
 import { join, relative, sep } from "node:path";
 import { app } from "./server";
 

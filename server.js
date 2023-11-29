@@ -3,7 +3,6 @@ import { html } from "@elysiajs/html";
 import { staticPlugin } from "@elysiajs/static";
 import { autoroutes } from "elysia-autoroutes";
 import { initRouter } from "./router";
-import { file } from "bun";
 
 export const app = new Elysia()
   .use(html())
