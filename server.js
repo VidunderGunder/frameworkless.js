@@ -3,6 +3,7 @@ import { html } from "@elysiajs/html";
 import { staticPlugin } from "@elysiajs/static";
 import { autoroutes } from "elysia-autoroutes";
 import { initRouter } from "./router";
+import { file } from "bun";
 
 export const app = new Elysia()
   .use(html())
@@ -13,7 +14,10 @@ export const app = new Elysia()
     })
   );
 
-initRouter(app);
+initRouter(app).onError(({ code, error, set }) => {
+  if (code === "NOT_FOUND") set.redirect = "/";
+  return new Response(error.toString());
+});
 
 app.listen(1111);
 

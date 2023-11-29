@@ -56,4 +56,9 @@ export function initRouter(app) {
       return file(path).text();
     });
   });
+  app.get("/*", () => {
+    const path = "./pages/404.html";
+    return file(path).text();
+  });
+  return app;
 }
