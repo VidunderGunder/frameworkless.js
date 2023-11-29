@@ -1,4 +1,4 @@
-# Back to Basics Web Framework
+# Frameworkless
 
 A barebones ready-to-go fullstack app with a pages router without the additives and preservatives.
 

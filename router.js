@@ -1,7 +1,7 @@
 import { file } from "bun";
 import { readdir } from "node:fs/promises";
 import { join, relative, sep } from "node:path";
-import { app } from "./server";
+import { app as _app } from "./server";
 
 /**
  * Recursively retrieves all files from the given directory.
@@ -44,10 +44,10 @@ async function getFiles(dir, rootDir = dir) {
   return pages;
 }
 
-const pages = await getFiles("./pages");
+export const pages = await getFiles("./pages");
 
 /**
- * @param {typeof app} app
+ * @param {typeof _app} app
  */
 export function initRouter(app) {
   Object.entries(pages).forEach(([route, page]) => {

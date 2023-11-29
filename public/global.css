@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+html,
+body,
+main,
+div,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+css-only-component {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: aliceblue;
+}
