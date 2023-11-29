@@ -13,10 +13,7 @@ export const app = new Elysia()
     })
   );
 
-initRouter(app).onError(({ code, error, set }) => {
-  if (code === "NOT_FOUND") set.redirect = "/";
-  return new Response(error.toString());
-});
+initRouter(app);
 
 app.listen(1111);
 
