@@ -4,7 +4,7 @@ A barebones ready-to-go fullstack app with a pages router without the additives 
 
 Key features:
 
+- HTML
 - Web Components
-- Simple and fast JS backend
-- No compilation step
-- OpenAPI Swagger for you API
+- JSDoc for types (No compilation step)
+- Elysia.js (Simple and fast JS backend)
