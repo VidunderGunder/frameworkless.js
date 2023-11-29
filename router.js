@@ -1,26 +1,47 @@
 import { file } from "bun";
-import { readdir } from "node:fs/promises";
-import { join } from "node:path";
+import { readdir, stat } from "node:fs/promises";
+import { join, relative, sep } from "node:path";
 import { app } from "./server";
 
 /**
- * @param {string} dir
- * @returns {Promise<Record<string, string>>}
+ * Recursively retrieves all files from the given directory.
+ *
+ * @param {string} dir The base directory to search in.
+ * @param {string} [rootDir] The root directory for relative path calculation.
+ * @returns {Promise<Record<string, string>>} An object mapping routes to file paths.
  */
-async function getFiles(dir) {
+async function getFiles(dir, rootDir = dir) {
+  /** @type {Record<string, string>} */
+  const pages = {};
+
   try {
-    const fileNames = await readdir(dir);
-    /** @type {Record<string, string>} */
-    const pages = {};
-    fileNames.forEach((fn) => {
-      const route = join("/", fn.replace(/\.html$/, "").replace(/index$/, ""));
-      pages[route] = join(dir, fn);
-    });
-    return pages;
+    const entries = await readdir(dir, { withFileTypes: true });
+    await Promise.all(
+      entries.map(async (entry) => {
+        const fullPath = join(dir, entry.name);
+
+        if (entry.isDirectory()) {
+          // Recursively process directories
+          Object.assign(pages, await getFiles(fullPath, rootDir));
+        } else if (entry.isFile()) {
+          // Process files
+          const relativePath = relative(rootDir, fullPath);
+          const route =
+            "/" +
+            relativePath
+              .split(sep)
+              .join("/")
+              .replace(/\.html$/, "")
+              .replace(/index$/, "");
+          pages[route] = fullPath;
+        }
+      })
+    );
   } catch (err) {
     console.error(err);
-    return {};
   }
+
+  return pages;
 }
 
 const pages = await getFiles("./pages");

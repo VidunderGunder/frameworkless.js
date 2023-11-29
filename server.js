@@ -15,6 +15,6 @@ export const app = new Elysia()
 
 initRouter(app);
 
-app.listen(3000);
+app.listen(1111);
 
 console.log(`🦊 Elysia is running at ${app.server?.url}`);
