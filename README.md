@@ -1,15 +1,10 @@
-# Elysia with Bun runtime
+# Back to Basics Web Framework
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
+A barebones ready-to-go fullstack app with a pages router without the additives and preservatives.
 
-## Development
-To start the development server run:
-```bash
-bun run dev
-```
+Key features:
 
-Open http://localhost:3000/ with your browser to see the result.
+- Web Components
+- Simple and fast JS backend
+- No compilation step
+- OpenAPI Swagger for you API
