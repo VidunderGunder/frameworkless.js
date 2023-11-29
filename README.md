@@ -1,6 +1,6 @@
 # Frameworkless
 
-A barebones ready-to-go fullstack app with a pages router without the additives and preservatives of Big Framework™.
+A barebones ready-to-go fullstack app with a pages router, but without the additives and preservatives of Big Framework™.
 
 Key features:
 
