@@ -1,5 +1,5 @@
 customElements.define(
-  "app-button",
+  "web-button",
   class extends HTMLElement {
     constructor() {
       super();

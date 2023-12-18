@@ -2,14 +2,15 @@
   "name": "htmx-app",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch server.js",
+    "dev:bun": "bun run --watch server.js",
+    "dev:go": "air -c .air.toml",
     "lint": "oxlint ."
   },
   "dependencies": {
     "@elysiajs/html": "^0.7.3",
     "@elysiajs/static": "^0.7.1",
     "@elysiajs/swagger": "^0.7.4",
+    "bun": "^1.0.18",
     "elysia": "^0.7.29"
   },
   "devDependencies": {

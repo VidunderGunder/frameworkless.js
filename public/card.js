@@ -1,5 +1,5 @@
 customElements.define(
-  "app-card",
+  "web-card",
   class extends HTMLElement {
     constructor() {
       super();

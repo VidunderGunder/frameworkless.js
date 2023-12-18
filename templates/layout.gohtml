@@ -1,4 +1,4 @@
-<!-- 404 pages -->
+{{define "layout"}}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="/public/index.js" type="module"></script>
     <link href="/public/global.css" rel="stylesheet" />
-    <title>404</title>
+    <title>{{template "title"}}</title>
   </head>
-  <web-layout>
-    <h1>404</h1>
-    <p>Page not found</p>
-  </web-layout>
+  <body>
+    <web-layout>{{template "page"}}</web-layout>
+  </body>
 </html>
+{{ end }}

@@ -1,15 +1,15 @@
 customElements.define(
-  "app-nested",
+  "web-nested",
   class extends HTMLElement {
     constructor() {
       super();
       const element = document.createElement("template");
       element.innerHTML = /*html*/ `
-        <app-card>
-          <app-button>
+        <web-card>
+          <web-button>
             <slot></slot>
-          </app-button>
-        </app-card>
+          </web-button>
+        </web-card>
       `;
       const shadow = this.attachShadow({ mode: "open" });
       shadow.append(element.content.cloneNode(true));

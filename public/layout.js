@@ -1,5 +1,5 @@
 customElements.define(
-  "app-layout",
+  "web-layout",
   class extends HTMLElement {
     constructor() {
       super();
@@ -41,14 +41,14 @@ customElements.define(
         </style>
         <nav>
           <a href="/">Home</a>
-          <a href="/sub">Subpage Index</a>
+          <a href="/sub/">Subpage Index</a>
           <a href="/sub/example">Subpage</a>
           <a href="/404">404</a>
           <a href="/some/link">Doesn't Exists</a>
-          <a href="/swagger">API (Swagger)</a>
+          <a href="/swagger/">API (Swagger)</a>
         </nav>
         <main>
-        <slot></slot>
+          <slot></slot>
         </main>
         <footer>Footer</footer>
       `;
