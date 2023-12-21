@@ -2,8 +2,9 @@
   "name": "htmx-app",
   "version": "1.0.50",
   "scripts": {
-    "dev:bun": "bun run --watch server.js",
+    "dev": "bun run --watch server.js",
     "dev:go": "air -c .air.toml",
+    "killports": "bunx kill-port 1111 2222",
     "lint": "oxlint ."
   },
   "dependencies": {

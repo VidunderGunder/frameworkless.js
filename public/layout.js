@@ -10,6 +10,9 @@ customElements.define(
             font-family: sans-serif;
           }
           nav {
+            top: 0;
+            left: 0;
+            right: 0;
             position: fixed;
             width: 100%;
             display: flex;
@@ -32,6 +35,8 @@ customElements.define(
             position: fixed;
             width: 100%;
             bottom: 0;
+            left: 0;
+            right: 0;
             display: flex;
             align-items: center;
             justify-content: center;

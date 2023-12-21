@@ -15,10 +15,7 @@ Key features:
   - No compilation step
   - What you see is what you get
 
-
-
 ## Getting Started
-
 
 ### Go
 
